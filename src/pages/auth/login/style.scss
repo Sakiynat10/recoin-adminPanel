@@ -1,0 +1,57 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    .ant-col{
+        padding-bottom: 0 !important;
+    }
+    label{
+        cursor: pointer;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    .login-form{
+        max-width: 400px;
+        width: 100%;
+        input{
+            height: 100%;
+            outline: none;
+        }
+    }
+    .ant-form-item-control-input-content{
+        height: 42px;
+    }
+    .ant-input-affix-wrapper{
+        height: 42px;
+    }
+    .ant-form-item{
+        margin-bottom: 10px;
+    }
+    
+    button{
+        margin-top: 20px;
+        max-width: 400px;
+        width: 100%;
+        height: 42px;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #353131;
+        &:hover{
+            background-color: #000000c0 !important;
+            color: #fff;
+        }
+    }
+    .change-auth{
+        display: inline-block;
+        margin-top: 20px;
+        a{
+            color: #000;
+            font-weight: 600;
+            &:hover{
+                border-bottom: 2px solid #000;
+            }
+        }
+    }
+}
