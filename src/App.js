@@ -10,26 +10,12 @@ import AccountPage from './pages/admin/profile';
 import AuthPage from './pages/auth/page';
 import BillingPage from './pages/admin/billing';
 import SettingsPage from './pages/admin/settings';
-import Cookies from 'js-cookie';
-import { TOKEN } from './constants';
 import { useContext } from 'react';
 import { AuthContext } from './context/auth';
 
 function App() {
-  // const [authToken, setAuthToken] = useState(null);
   const {isAuth} = useContext(AuthContext)
-   
-  // useEffect(() => {
-  //   const token = Cookies.get(TOKEN);
-  //   setAuthToken(token);
-  //   console.log(token);
-  // }, []);
   
-  console.log(Cookies.get(TOKEN));
-  console.log(isAuth);
-  const token = Cookies.get(TOKEN)
-  console.log(Boolean(token));
-  console.log(token);
   return (
     <BrowserRouter>
       <Routes>
@@ -38,7 +24,7 @@ function App() {
           <Route path='register' element={<RegisterPage/>}/>
           <Route path='login' element={<LoginPage/>}/>
         </Route>
-        <Route path='admin' element={ Boolean(token) ? <AdminLayout/>: <Navigate to="/auth/login" />}>
+        <Route path='admin' element={ isAuth ? <AdminLayout/>: <Navigate to="/auth/login" />}>
           <Route path="dashboard" element={<DashboardPage/>}/>
           <Route path="user" element={isAuth ? <UserPage/>  : <Navigate to="/auth/login" />}/>
           <Route path="product" element={isAuth ? <ProductPage/>  : <Navigate to="/auth/login" />}/>
