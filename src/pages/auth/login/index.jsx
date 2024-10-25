@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { TOKEN } from "../../../constants";
 import { AuthContext } from "../../../context/auth";
+import axios from "axios";
 
 
 const LoginPage = () => {
@@ -21,6 +22,14 @@ const LoginPage = () => {
     try{
       setLoading(true)
       const {data: {token}} = await request.post("/auth/login" , values);
+      
+      const {data} = await request.get("/user/all", {
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
+      })
+
+      console.log(data);
 
       console.log(token);
       if(token){

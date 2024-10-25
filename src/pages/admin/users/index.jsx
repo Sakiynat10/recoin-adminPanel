@@ -1,11 +1,107 @@
+import { Button, Space, Table, Tag } from 'antd';
+import { useEffect, useState } from 'react';
+import request from '../../../server/request';
+import Cookies from 'js-cookie';
+import { TOKEN } from '../../../constants';
+const columns = [
+  {
+    title: 'FirstName',
+    dataIndex: 'firstName',
+    key: 'firstName',
+    render: (text) => <a>{text}</a>,
+  },
+  {
+    title: 'LastName',
+    dataIndex: 'lastName',
+    key: 'lastName',
+  },
+  {
+    title: 'Group',
+    dataIndex: 'groupName',
+    key: 'groupName',
+  },
+  {
+    title: 'Email',
+    dataIndex: 'email',
+    key: 'email',
+  },
+  {
+    title: 'PhoneNumber',
+    dataIndex: 'phoneNumber',
+    key: 'phoneNumber',
+  },
+  {
+    title: 'Balance',
+    dataIndex: 'balance',
+    key: 'balance',
+  },
+  //   {
+  //   title: 'CreatedDate',
+  //   dataIndex: 'createdDate',
+  //   key: 'createdDate',
+  // },
+  // {
+  //   title: 'LastDate',
+  //   dataIndex: 'lastDate',
+  //   key: 'lastDate',
+  // },
+  // {
+  //   title: 'Tags',
+  //   key: 'tags',
+  //   dataIndex: 'tags',
+  //   render: (_, { tags }) => (
+  //     <>
+  //       {tags.map((tag) => {
+  //         let color = tag.length > 5 ? 'geekblue' : 'green';
+  //         if (tag === 'loser') {
+  //           color = 'volcano';
+  //         }
+  //         return (
+  //           <Tag color={color} key={tag}>
+  //             {tag.toUpperCase()}
+  //           </Tag>
+  //         );
+  //       })}
+  //     </>
+  //   ),
+  // },
+  {
+    title: 'Action',
+    key: 'action',
+    render: () => (
+      <>
+        <Button type={"primary"} style={{marginRight:"16px"}}>Edit</Button>
+        <Button type='primary' danger>Delete</Button>
+      </>
+    ),
+  },
+];
+
 
 const UserPage = () => {
-  return (
-    <div>
-      <h1>Users</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores possimus numquam dolorem quod illum ea, ad eos distinctio quae tempora impedit veritatis voluptates corrupti dolor ratione delectus quidem praesentium? Amet perspiciatis aut, est voluptatum iste aspernatur, quae fugiat tenetur assumenda qui quia corporis itaque nisi ipsam totam neque eaque ut deleniti recusandae, debitis quod cum quibusdam rem explicabo. Culpa inventore voluptatem minus maxime voluptate assumenda iusto itaque labore amet consectetur impedit, aperiam et deleniti repellendus ea obcaecati blanditiis sequi aliquam quaerat! Itaque fuga architecto eaque autem assumenda illo nulla nihil, sapiente qui veritatis incidunt consectetur similique corporis non necessitatibus cumque pariatur? Quas labore obcaecati natus ipsam libero nobis autem voluptates aliquid, eos rem adipisci ad vitae! Atque nihil porro, quos assumenda cumque aut officiis quas. Numquam reiciendis eaque recusandae aliquam pariatur sequi dolore? Molestias atque, aliquam nobis laudantium sit inventore. Nisi molestias dicta, ratione blanditiis voluptatibus amet, eos exercitationem rerum voluptate, quas nihil ipsum officiis numquam consectetur iste fuga expedita voluptatum inventore incidunt soluta quidem? Quasi repellat cum rerum saepe ea aut natus animi? Harum repudiandae veniam ad possimus commodi voluptatum iusto numquam corrupti animi ex quae ipsa necessitatibus tenetur doloremque pariatur quod dignissimos quidem exercitationem, qui praesentium! Ab recusandae nobis dolor velit cumque laudantium provident eveniet quis? Quidem, placeat doloremque. Illo cupiditate amet non deserunt ducimus aliquam impedit fugit perspiciatis et, dolorem odio dicta. Aspernatur quam consequatur, quo odit odio perspiciatis mollitia laudantium eveniet optio distinctio corporis reprehenderit explicabo alias culpa. Ex, expedita perferendis nesciunt repellat rerum asperiores fuga quia minima similique dolore iusto hic illum? Sapiente, hic? Illo architecto repudiandae esse et nostrum possimus assumenda obcaecati, officiis aliquid accusantium sed, eos ab, animi quam unde iste nesciunt delectus rem minus quidem eum! Rerum sint, nemo obcaecati sapiente excepturi, ducimus eius, possimus eum nesciunt ad molestiae ex? Tempore maxime possimus nam doloremque temporibus fugit ducimus vel vero deleniti? Deleniti debitis excepturi, facere ea consequatur doloremque aliquid quaerat delectus officiis consequuntur aperiam quae a vitae quisquam laboriosam assumenda ad saepe fuga. Maiores ipsam numquam corporis, ab recusandae quae saepe voluptatum distinctio aperiam sunt nemo fugiat, eveniet explicabo quia laudantium magni culpa illo. Perspiciatis a aut at unde saepe, debitis enim impedit voluptatem veniam facilis quibusdam, beatae ipsum nesciunt delectus illum id in perferendis ad. At ab rerum, veniam dolore laborum nobis autem excepturi. Placeat, asperiores. Omnis ipsa quod reprehenderit nemo, laborum excepturi accusantium odio nam praesentium iusto deleniti laboriosam atque iure vel, hic voluptate, odit quas natus. Id, temporibus amet. Delectus, iure ipsum odit, placeat numquam quibusdam natus odio dignissimos a cupiditate minima vitae! Ipsa dolores nisi, impedit nam ratione inventore aspernatur eaque, odio ad deleniti, fugiat quas. Odio minima hic voluptatum saepe magnam at temporibus autem quam sint commodi expedita nemo cupiditate aliquid doloribus error accusamus neque, voluptate labore quia quo architecto necessitatibus cum esse recusandae? Deserunt dolores, commodi unde aspernatur impedit doloribus mollitia repellat non nam qui magni nemo suscipit ratione recusandae quod ab odio voluptates dolor delectus nesciunt illum error! Eligendi atque cupiditate fugit quam fuga et cum recusandae earum ut, quia cumque, laboriosam blanditiis aliquid ab explicabo accusamus doloremque minus optio natus itaque error consequatur! Est placeat at aliquid nostrum expedita labore id aliquam corporis iusto. Eum ipsa laboriosam minima quae doloribus! Dolores temporibus dolorem quaerat, nesciunt laboriosam mollitia voluptatum asperiores. Aliquid quibusdam maiores et. Quam vel optio eligendi, velit excepturi ducimus quaerat obcaecati cupiditate eos aut tenetur laborum assumenda vitae omnis qui mollitia incidunt. Vero expedita rem veritatis adipisci laboriosam accusantium a aperiam laborum dicta quibusdam dolore illum et sapiente facere iusto, deserunt, nisi sint! Molestiae doloremque ipsa perspiciatis, culpa ad fuga, nobis voluptatum illum corrupti ratione magni, corporis cumque maxime eveniet dolorem alias consequatur debitis quas illo voluptate soluta iste veritatis. Laborum dignissimos tempore obcaecati, cum dolor autem ullam eveniet. Modi voluptates quas nulla est reprehenderit veritatis distinctio earum delectus itaque, quia dolore quam eaque similique dolorem, ipsam fugit aut magni, possimus laborum recusandae laudantium quis. Vero esse consectetur officia facere voluptatum temporibus nulla itaque nobis dicta maiores amet illo optio molestiae qui culpa cupiditate, vitae doloribus necessitatibus inventore atque aliquid cumque vel quia tenetur. Unde iusto odio eligendi, obcaecati earum repudiandae aperiam repellat illum quasi ipsum voluptate aut laborum reiciendis nihil consectetur expedita hic dignissimos quae exercitationem ullam. Quae sunt laudantium vitae itaque magnam fugiat vero dicta esse minima tenetur neque iusto iure laboriosam, necessitatibus asperiores obcaecati minus delectus id maiores ipsam illo! Officiis quis voluptate quam quos. Incidunt odit quia veritatis aspernatur error consequuntur aliquam, earum consectetur hic, laboriosam nihil debitis quisquam quam ullam temporibus excepturi ad dignissimos ratione eveniet odio ea nisi unde tempore. Similique modi qui eius, sapiente dicta veniam totam officiis eum corrupti! Voluptas modi quibusdam rem quidem quam at ratione iure voluptatibus. Consectetur eaque atque, possimus, praesentium nihil aliquid quibusdam delectus tempora iusto numquam, veritatis maiores animi temporibus iure laboriosam vitae voluptates in sapiente laudantium assumenda quia. Voluptates perspiciatis laudantium velit impedit sit atque omnis adipisci deserunt voluptatibus vero incidunt suscipit autem deleniti minima ab explicabo harum, soluta placeat sapiente possimus debitis quisquam dolorem dolorum. Amet fugit distinctio hic doloribus, esse dolores commodi voluptate laborum ex maxime minus numquam culpa laboriosam accusantium voluptatem sit. Natus nisi esse asperiores. Necessitatibus, illum, blanditiis quos magni atque natus dignissimos quia eligendi quasi reprehenderit doloremque minus nulla voluptatum praesentium cum dicta explicabo pariatur, magnam id laboriosam temporibus. Dolor hic tempore numquam repudiandae aut, voluptatibus voluptas voluptate libero, cumque soluta culpa quia sit dignissimos unde a incidunt eos, consectetur adipisci quis. Illum, labore blanditiis quibusdam numquam temporibus assumenda! Recusandae eos assumenda nihil possimus hic quos cum animi. Blanditiis unde sunt impedit tempore quidem odit laboriosam quae temporibus, veniam nemo, aspernatur fugit? Culpa, quasi! Quas, sint? Quos ipsum dolorum culpa in sunt, vero quidem vel accusantium corrupti molestiae dignissimos iste, pariatur sint qui debitis non omnis facilis quaerat odit? Accusamus possimus voluptates quas. Delectus hic ducimus, ab beatae obcaecati voluptates! Exercitationem quos enim deleniti reprehenderit ducimus voluptas voluptates dicta explicabo. Qui ullam eveniet magnam odio quisquam ipsam numquam iste, accusantium nam error veniam inventore.</p>
-    </div>
+  const [users, setUsers] = useState(null);
+  const [loading , setLoading] = useState(false);
+  const token = Cookies.get(TOKEN)
+  useEffect(() => {
+    const getCategories = async() => {
+      try{
+        setLoading(true)
+        const {data} = await request.get("/user/all", {
+          headers:{
+            Authorization:`Bearer ${token}`
+          }
+        })
+        console.log(data);
+        setUsers(data)
+      }finally{
+        setLoading(false)
+      }
+    }
+    getCategories();
+  },[])
+
+  return(
+    <Table loading={loading} columns={columns} key={users} dataSource={users} />
   )
 }
-
-export default UserPage
+export default UserPage;

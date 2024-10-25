@@ -4,7 +4,13 @@ import {
   MenuUnfoldOutlined,
   UploadOutlined,
   UserOutlined,
+  OrderedListOutlined,
+  ShoppingOutlined,
+  CreditCardOutlined,
+  ProfileOutlined,
+  SettingOutlined,
   VideoCameraOutlined,
+  DashboardOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import "./style.scss";
@@ -82,7 +88,7 @@ const App = () => {
             {
               key: "1",
               icon: (
-                <UserOutlined
+                <DashboardOutlined
                 style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}
                   onClick={() => {
                     setKey(1);
@@ -93,15 +99,18 @@ const App = () => {
               label: (
                 <button
                   style={{
-                    height: "40px",
-                    cursor:"pointer",
-                    width: "200px",
-                    position: "absolute",
+                    width: "100%",
                     display: "flex",
-                    alignItems: "center",
+                    padding: "0",
                     background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
                     border: "none",
-                    color: "#fff",
                   }}
                   onClick={() => {
                     setKey(1);
@@ -115,28 +124,31 @@ const App = () => {
             },
             {
               key: "2",
-              icon: <VideoCameraOutlined  
+              icon: <UserOutlined
               style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}                 
               onClick={() => {
                 setKey(2);
-                navigate("/admin/user");
+                navigate("/admin/users");
               }} />,
               label: (
                 <button
                   style={{
-                    height: "40px",
-                    cursor:"pointer",
-                    width: "200px",
-                    position: "absolute",
+                    width: "100%",
                     display: "flex",
-                    alignItems: "center",
+                    padding: "0",
                     background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
                     border: "none",
-                    color: "#fff",
                   }}
                   onClick={() => {
                     setKey(2);
-                    navigate("/admin/user");
+                    navigate("/admin/users");
                     localStorage.setItem("KEY", 2);
                   }}
                 >
@@ -146,29 +158,66 @@ const App = () => {
             },
             {
               key: "3",
-              icon: <UploadOutlined   
+              icon: <OrderedListOutlined  
               style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}               
                onClick={() => {
                 setKey(3);
-                navigate("/admin/product");
+                navigate("/admin/orders");
               }} />,
               label: (
                 <button
                   style={{
-                    height: "40px",
-                    cursor:"pointer",
-                    width: "200px",
-                    position: "absolute",
+                    width: "100%",
                     display: "flex",
-                    alignItems: "center",
+                    padding: "0",
                     background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
                     border: "none",
-                    color: "#fff",
                   }}
                   onClick={() => {
                     setKey(3);
-                    navigate("/admin/product");
+                    navigate("/admin/orders");
                     localStorage.setItem("KEY", 3);
+                  }}
+                >
+                  Orders
+                </button>
+              ),
+            },
+            {
+              key: "4",
+              icon: <ShoppingOutlined  
+              style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}               
+               onClick={() => {
+                setKey(4);
+                navigate("/admin/products");
+              }} />,
+              label: (
+                <button
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    padding: "0",
+                    background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
+                    border: "none",
+                  }}
+                  onClick={() => {
+                    setKey(4);
+                    navigate("/admin/products");
+                    localStorage.setItem("KEY", 4);
                   }}
                 >
                   Products
@@ -176,31 +225,34 @@ const App = () => {
               ),
             },
             {
-              key: "4",
-              icon: <UploadOutlined 
+              key: "5",
+              icon: <ProfileOutlined 
               style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}
               onClick={() => {
-                setKey(4);
+                setKey(5);
                 navigate("/admin/profile");
               }}
               />,
               label: (
                 <button
                   style={{
-                    height: "40px",
-                    cursor:"pointer",
-                    width: "200px",
-                    position: "absolute",
+                    width: "100%",
                     display: "flex",
-                    alignItems: "center",
+                    padding: "0",
                     background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
                     border: "none",
-                    color: "#fff",
                   }}
                   onClick={() => {
-                    setKey(4);
+                    setKey(5);
                     navigate("/admin/profile");
-                    localStorage.setItem("KEY", 4);
+                    localStorage.setItem("KEY", 5);
                   }}
                 >
                   Profile
@@ -208,31 +260,34 @@ const App = () => {
               ),
             },
             {
-              key: "5",
-              icon: <UploadOutlined
+              key: "6",
+              icon: <CreditCardOutlined
               style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}
               onClick={() => {
-                setKey(5);
+                setKey(6);
                 navigate("/admin/billing");
               }}
               />,
               label: (
                 <button
                   style={{
-                    height: "40px",
-                    cursor:"pointer",
-                    width: "200px",
-                    position: "absolute",
+                    width: "100%",
                     display: "flex",
-                    alignItems: "center",
+                    padding: "0",
                     background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
                     border: "none",
-                    color: "#fff",
                   }}
                   onClick={() => {
-                    setKey(5);
+                    setKey(6);
                     navigate("/admin/billing");
-                    localStorage.setItem("KEY", 5);
+                    localStorage.setItem("KEY", 6);
                   }}
                 >
                   Billing
@@ -240,30 +295,33 @@ const App = () => {
               ),
             },
             {
-              key: "6",
-              icon: <UploadOutlined style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}
+              key: "7",
+              icon: <SettingOutlined style={{ width:"50px" , height:"38px",  objectFit:"cover", objectPosition:"center" ,paddingLeft:"20px" , marginLeft:"-20px"}}
               onClick={() => {
-                setKey(6);
+                setKey(7);
                 navigate("/admin/settings");
               }}
               />,
               label: (
                 <button
                   style={{
-                    height: "40px",
-                    cursor:"pointer",
-                    width: "200px",
-                    position: "absolute",
+                    width: "100%",
                     display: "flex",
-                    alignItems: "center",
+                    padding: "0",
                     background: "transparent",
+                    margin: "0",
+                    color: "gray",
+                    gap: "10px",
+                    height: "30px",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    cursor: "pointer",
                     border: "none",
-                    color: "#fff",
                   }}
                   onClick={() => {
-                    setKey(6);
+                    setKey(7);
                     navigate("/admin/settings");
-                    localStorage.setItem("KEY", 6);
+                    localStorage.setItem("KEY", 7);
                   }}
                 >
                   Settings
@@ -271,7 +329,7 @@ const App = () => {
               ),
             },
             {
-              key: "7",
+              key: "8",
               label: (
                 <button
                   onClick={logoutModal}
@@ -291,7 +349,7 @@ const App = () => {
                   }}
                   to={"/auth"}
                 >
-                  <UploadOutlined style={{ fill: "white" }} />
+                  <UploadOutlined style={{ fill: "white" , marginRight:"20px"}} />
                   Logout
                 </button>
               ),
@@ -350,12 +408,12 @@ const App = () => {
                 <button
                   onClick={() => {
                     setModal(false);
-                    setKey(4);
+                    setKey(5);
                     navigate("/admin/profile");
-                    localStorage.setItem("KEY" , 4)
+                    localStorage.setItem("KEY" , 5)
                   }}
                 >
-                  <UserOutlined />
+                  <ProfileOutlined />
                   Profile
                 </button>
               </li>
@@ -363,12 +421,12 @@ const App = () => {
                 <button
                   onClick={() => {
                     setModal(false);
-                    setKey(5);
+                    setKey(6);
                     navigate("/admin/billing");
-                    localStorage.setItem("KEY" , 5)
+                    localStorage.setItem("KEY" , 6)
                   }}
                 >
-                  <UserOutlined />
+                  <CreditCardOutlined />
                   Billing
                 </button>
               </li>
@@ -376,12 +434,12 @@ const App = () => {
                 <button
                   onClick={() => {
                     setModal(false);
-                    setKey(6);
+                    setKey(7);
                     navigate("/admin/settings");
-                    localStorage.setItem("KEY" , 6)
+                    localStorage.setItem("KEY" , 7)
                   }}
                 >
-                  <UserOutlined />
+                  <SettingOutlined />
                   Settings
                 </button>
               </li>
