@@ -23,19 +23,13 @@ const LoginPage = () => {
       setLoading(true)
       const {data: {token}} = await request.post("/auth/login" , values);
       
-      const {data} = await request.get("/user/all", {
-        headers:{
-          Authorization:`Bearer ${token}`
-        }
-      })
-
-      console.log(data);
-
       console.log(token);
       if(token){
         Cookies.set(TOKEN, token);
-        setIsAuth(true)
-        navigate("/admin/dashboard");
+        setIsAuth(true);
+        const key = localStorage.getItem("KEY");
+        console.log(key);
+        navigate(`/admin/${key === "1" ? "dashboard" : key === "2" ? "users" : key === "3" ? "orders" : key === "4" ? "products" : key === "5" ? "profile" : key === "6" ? "billing" : "settings"}`);
       }else{
         navigate("/auth/register")
       }

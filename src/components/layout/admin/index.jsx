@@ -14,7 +14,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import "./style.scss";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { TOKEN } from "../../../constants";
 import { AuthContext } from "../../../context/auth";
@@ -31,6 +31,11 @@ const App = () => {
   const modalRef = useRef(null);
   const buttonRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const currentPage = location.pathname;
+
+  const currentPath = currentPage.split("/")[2];
 
   const logoutModal = () => {
     setControlLogout(true);
@@ -83,7 +88,7 @@ const App = () => {
           theme="dark"
           mode="inline"
           selectedKeys={`${key}`}
-          defaultValue={1}
+          defaultValue={key}
           items={[
             {
               key: "1",
