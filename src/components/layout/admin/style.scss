@@ -39,11 +39,12 @@
   position: absolute;
   list-style: none;
   padding: 5px;
-  top: 56px;
+  top: 70px;
   box-shadow: 2px 2px 5px gray;
   border-radius: 5px;
-  right: 0;
+  right: 20px;
   background-color: #fff;
+  z-index: 20;
   li{
     margin-top: 0;
     margin-bottom: 0;

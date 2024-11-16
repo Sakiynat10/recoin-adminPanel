@@ -363,7 +363,7 @@ const App = () => {
           ]}
         />
       </Sider>
-      <Layout>
+      <Layout className="relative">
         <Header
           style={{
             padding: 0,
@@ -398,13 +398,14 @@ const App = () => {
               zIndex: "51",
               border: "3px solid gray",
               cursor: "pointer",
+              marginRight:"20px",
             }}
           >
             <img
               width="50px"
               height="50px"
               style={{ background: "red", borderRadius: "50px" }}
-              src="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
+              src="/my-image.jpg"
               alt="logo"
             />
           </button>

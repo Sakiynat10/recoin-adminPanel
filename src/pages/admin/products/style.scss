@@ -1,0 +1,28 @@
+.product-input-group{
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px !important;
+    width: 100%;
+    margin-top: 40px;
+
+    select{
+        height: 100%;
+        width: 100%;
+        border-radius: 6px;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width:865px) {
+    .product-input-group{
+        display: grid;
+        position: fixed;
+        z-index: 20;
+        top: 17px;
+        right: 100px;
+        margin-top: 0;
+    }
+}
