@@ -1,5 +1,7 @@
 .ant-layout{
-    height: 100vh;
+    background-color: 
+    #272d47 !important;
+    height: 98vh;
     &-content{
         height: calc(100vh - 64px);
         overflow: scroll;
@@ -13,6 +15,14 @@
           }
         
     }
+}
+
+
+
+
+.ant-layout-sider-children , .ant-menu{
+  border-radius: 20px!important;
+  background: #13173c !important;
 }
 
 .ant-layout-header{
@@ -73,16 +83,52 @@
   }
 }
 
+
 .ant-layout {
-  .ant-layout-sider , .ant-menu{
-    background-color: black !important;
+  .ant-layout-sider , .ant-menu{  
+    background: #13173c !important;
+    svg{
+      width: 24px;
+      height: 24px;
+      color: #fff;
+      &:nth-child(8){
+        color:  #13173c !important;
+      }
+    }
+    .logout-btn{
+      svg{
+        width: 24px;
+        height: 24px;
+        color:  rgba(112, 0, 255, 1);
+      }
+    }
+    button{
+      font-size: 20px !important;
+    }
     .ant-menu-item-active{
-      background-color: orange !important;
+      background-color: #ffffffd1 !important;
+      svg{
+        fill:  rgba(112, 0, 255, 1) !important;
+      }
+      button{
+        color:  rgba(112, 0, 255, 1) !important;
+      }
     }
     .ant-menu-item-selected{
-      background-color: orange !important;
+      background-color: white !important;
+      svg{
+        fill:  rgba(112, 0, 255, 1) !important;
+      }
+      button{
+        color:  rgba(112, 0, 255, 1) !important;
+      }
     }
   }
+}
+
+.ant-layout-content{
+  background:  #272d47 !important;
+  border-radius: 0px !important;
 }
 
 .admin-logo{

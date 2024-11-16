@@ -9,15 +9,15 @@ import {
   CreditCardOutlined,
   ProfileOutlined,
   SettingOutlined,
-  VideoCameraOutlined,
   DashboardOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import "./style.scss";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import {  Outlet, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { TOKEN } from "../../../constants";
 import { AuthContext } from "../../../context/auth";
+import { BackgroundBeamsWithCollision } from "../../ui/background-beams-with-collision";
 
 const { Header, Sider, Content } = Layout;
 
@@ -109,7 +109,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,220)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -143,7 +143,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,225)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -177,7 +177,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,225)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -211,7 +211,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,225)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -246,7 +246,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,225)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -281,7 +281,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,225)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -315,7 +315,7 @@ const App = () => {
                     padding: "0",
                     background: "transparent",
                     margin: "0",
-                    color: "gray",
+                    color: "rgba(255 , 255 ,225)",
                     gap: "10px",
                     height: "30px",
                     alignItems: "center",
@@ -337,6 +337,7 @@ const App = () => {
               key: "8",
               label: (
                 <button
+                className="logout-btn"
                   onClick={logoutModal}
                   style={{
                     width: "100%",
@@ -354,7 +355,7 @@ const App = () => {
                   }}
                   to={"/auth"}
                 >
-                  <UploadOutlined style={{ fill: "white" , marginRight:"20px"}} />
+                  <UploadOutlined className="logout-img" style={{  marginRight:"10px"}} />
                   Logout
                 </button>
               ),
@@ -451,16 +452,18 @@ const App = () => {
             </ul>
           )}
         </Header>
-        <Content
-          style={{
-            padding: 24,
-            minHeight: 280,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          <Outlet />
-        </Content>
+        <BackgroundBeamsWithCollision>
+          <Content
+            style={{
+              padding: 24,
+              minHeight: 280,
+              background: colorBgContainer,
+              borderRadius: borderRadiusLG,
+            }}
+          >
+            <Outlet />
+          </Content>
+        </BackgroundBeamsWithCollision>
       </Layout>
       {controlLogout ? (
         <div className="logout-back">

@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 const request = axios.create({
     baseURL:ENDPOINT,
-    timeout:10000,
+    timeout:30000,
 })
 
 request.interceptors.response.use(response => response, (error) => {

@@ -25,7 +25,7 @@ function App() {
           <Route path='register' element={<RegisterPage/>}/>
           <Route path='login' element={<LoginPage/>}/>
         </Route>
-        <Route path='admin' element={ isAuth ? <AdminLayout/>: <Navigate to="/auth/login" />}>
+        {/* <Route path='admin' element={ isAuth ? <AdminLayout/>: <Navigate to="/auth/login" />}>
           <Route path="dashboard" element={<DashboardPage/>}/>
           <Route path="users" element={isAuth ? <UserPage/>  : <Navigate to="/auth/login" />}/>
           <Route path="orders" element={isAuth ? <OrdersPage/>  : <Navigate to="/auth/login" />}/>
@@ -33,6 +33,15 @@ function App() {
           <Route path="profile" element={isAuth ? <AccountPage/>  : <Navigate to="/auth/login" />}/>
           <Route path="billing" element={isAuth ? <BillingPage/>  : <Navigate to="/auth/login" />}/>
           <Route path="settings" element={isAuth ? <SettingsPage/>  : <Navigate to="/auth/login" />}/>
+        </Route> */}
+        <Route path='admin' element={ <AdminLayout/>}>
+          <Route path="dashboard" element={<DashboardPage/>}/>
+          <Route path="users" element={<UserPage/> }/>
+          <Route path="orders" element={<OrdersPage/> }/>
+          <Route path="products" element={<ProductsPage/> }/>
+          <Route path="profile" element={<AccountPage/> }/>
+          <Route path="billing" element={<BillingPage/> }/>
+          <Route path="settings" element={<SettingsPage/> }/>
         </Route>
       </Routes>
     </BrowserRouter>
