@@ -27,6 +27,12 @@
 
 .ant-layout-header{
   line-height: 20px;
+  background: #13173c !important;
+  .ant-btn{
+    svg{
+      color: white;
+    }
+  }
 } 
 
 .profile-lines{
@@ -127,6 +133,7 @@
 }
 
 .ant-layout-content{
+  height: 100vh;
   background:  #272d47 !important;
   border-radius: 0px !important;
 }
