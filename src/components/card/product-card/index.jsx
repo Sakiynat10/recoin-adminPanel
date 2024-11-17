@@ -59,15 +59,19 @@ export function ProductCard({product}) {
         <div className="flex justify-between items-center mt-10">
             <CardItem
                 translateZ={20}
-                as="button"
-                className="w-[40%] flex justify-center items-center bg-[#0502b7] px-4 py-3 rounded-xl  dark:bg-white dark:text-black text-white text-xs font-bold">
-                <img src="/edit.svg" alt="edit" />
+                as="div"
+                className="  flex justify-center items-center  dark:bg-white dark:text-black text-white text-xs font-bold">
+                  <button  className="bg-white w-[60px] h-[60px] rounded-full flex justify-center items-center">
+                      <img className="w-[30px] h-[30px] bg-white" src="/edit.svg" alt="edit" />
+                  </button>
             </CardItem>
             <CardItem
                 translateZ={20}
-                as="button"
-                className="flex justify-center bg-[#cd0132] items-center w-[40%] px-4 py-3 rounded-xl dark:bg-white dark:text-black text-white text-xs font-bold">
-                <img src="/delete.svg"/>
+                as="div"
+                className=" flex  justify-center items-center  dark:bg-white dark:text-black text-white text-xs font-bold">
+                  <button  className=" w-[60px] h-[60px] rounded-full flex justify-center items-center bg-white" >
+                     <img className="w-[30px] h-[30px] " src="/delete.svg"/>
+                  </button>
             </CardItem>
         </div>
       </CardBody>
